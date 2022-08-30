@@ -101,7 +101,11 @@ body {
     width: 50%;
     padding-right: 35%;
 }
-
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 /* Side navigation links */
 .sidenav a {
