@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CS 65500 (Spring 2025)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
+<SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
+<style>
+a:link {
+  color: #4a4b4c; 
+  background-color: transparent; 
+text-decoration: none;
+border-bottom: 1px dotted;
+
+}
+
+a:visited {
+  color: #4a4b4c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2c4f87;
+  background-color: transparent;
+  
+}
+p {
+  font-family: "Trebuchet MS";
+  
+}
+p.title {
+  font-family: "Trebuchet MS";
+  color: #c13c6f;
+  
+}
+h2 {
+color: #2c4f87;
+  font-family: "Trebuchet MS";
+  
+}
+
+h1 {
+color: #2c4f87;
+  font-family: "Trebuchet MS";
+  
+}
+@media screen and (min-width: 601px) {
+  h1 {
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 19px;
+  }
+ p {
+    font-size: 17px;
+  }
+   center{
+    font-size: 17px;
+  }
+ .column1 {
+    float: left;
+    width: 50%;
+    padding-left: 15%;
+}
+
+.column2 {
+    float: right;
+    width: 50%;
+    padding-right: 15%;
+   
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 10px;
+  }
+  center {
+    font-size: 10px;
+  }
+   .column1 {
+    float: left;
+    width: 50%;
+    padding-left: -5%;
+}
+
+.column2 {
+    float: right;
+    width: 50%;
+    padding-right: 2%;
+   
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+}
+
+h3 {
+color: #c13c6f;
+  font-family: "Trebuchet MS";
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+table, th, td {
+  
+}
+img {
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 5%;
+  overflow-x: hidden;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover 
+.sidenav a:hover {
+  background-color: #ddd;
+  color: white;
+}*/
+
+/* Style the content */
+.content {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-left: 5%;
+}
+
+
+table {
+  font-family: "Trebuchet MS";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+ 
+}
+ th{ color: #c13c6f;}
+tr:nth-child(even) {
+  background-color: #cbe6f0;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="content">
+<center><h1>CS 65500 - Advanced Cryptography <span style="color:#c13c6f">(Spring 2025)</span></h1></center>
+
+  </br><h2>Course Overview</h2>
+  <p>Cryptography enables secure communication and computation in the presence of adversaries. In this course, we will address a fundamental question related to secure and reliable collaboration: How can a group of mutually distrusting parties jointly compute a function over their private data without compromising the confidentiality of that data? </br></br>
+
+To answer this, we will first identify the security properties that are desirable for the scenario at hand. We will then formally define the key primitive that we wish to derive: <span style="color:#c13c6f"> secure multiparty computation </span>(and its variants).
+Finally, we will discuss various constructions and rigorously prove that they meet the defined security requirements. 
+
+</br> </br>Along the way, we will also explore other advanced cryptographic primitives, such as <span style="color:#c13c6f"> zero-knowledge proofs, oblivous transfer, fully homomorphic encryption, homomorphic secret sharing, pseudorandom correlation generators, etc. </span> These tools are used in the design of state-of-the-art secure multiparty computation protocols. </br></br>
+By the end of this course, you will be equipped to understand cryptography research papers and initiate  research in this area.
+  </p>
+  
+
+ <h2>Basic Information</h2>
+  <ul>
+ <li> <p><span style="color:#3a9bc4">Instructor: </span> <a href="https://aarushigoel.github.io/">Aarushi Goel</a> </p></li>
+  <li><p><span style="color:#3a9bc4">Class Time: </span> 3:00 PM - 4:15 PM, Tuesday and Thursday</p></li>
+  <li><p><span style="color:#3a9bc4">Class Location: </span> LWSN B134</p></li>
+  <li><p><span style="color:#3a9bc4">Office Hours: </span> 11 AM - 12 PM, Tuesday (LWSN 2142D)</p></li>
+  <li><p><span style="color:#3a9bc4">Ed Discussion: </span> On Brightspace</p></li>
+</ul>
+
+<h2>Pre-Requisites</h2>
+<p><span style="color:#c13c6f">CS 35500/55500 </span> (or an equivalent course). We will also assume exposure to basic probability, computational complexity and maturity with mathematical proofs</p>
+
+<h2>Grading Policy</h2>
+<ul>
+  <li><p><span style="color:#3a9bc4">10% </span> Class Participation</p></li>
+  <li><p><span style="color:#3a9bc4">20% </span> Midterm (in-class on March 6)</p></li>
+  <li><p><span style="color:#3a9bc4">25% </span> Final Exam (take-home)</p></li>
+  <li><p><span style="color:#3a9bc4">50% </span> Homeworks (best 5 out of 6) </p></li>
+</ul>
+<p>All homework must be submitted via <span style="color:#c13c6f">Gradescope</span> (on Brightspace). </p>
+<p><span style="color:#3a9bc4">Late Submission:</span> Homework submitted upto 24 hours late will incur a penalty of 50%. Homework submitted more than 24 hours late will receive no credit.</p>
+<p><span style="color:#3a9bc4">Collaboration:</span> You are encouraged to collaborate with your classmates on homework problems, however, your final write-up must be your own. Be sure to explicitly acknowledge everyone with whom you collaborated. You may also refer to books or online resources to aid in solving homework problems. However, you must properly credit all such sources in your submission, and under no circumstances should you copy material verbatim.</p>
+<p><span style="color:#3a9bc4">Academic Dishonesty:</span> In general, any instance of academic dishonesty will result in a significant penalty to your overall course grade and will be referred to the Office of the Dean of Students for further action.</p>
+
+
+
+
+<h2>Homework Schedule</h2>
+<table>
+  <tr>
+    <th>Homework</th>
+    <th>Release (5:00 PM)</th>
+    <th>Due (11:59 PM)</th>
+  </tr>
+  <tr>
+    <td>Homework 1</td>
+    <td>January 21</td>
+    <td>January 30</td>
+  </tr>
+   <tr>
+    <td>Homework 2</td>
+    <td>February 4</td>
+    <td>February 13</td>
+  </tr>
+  <tr>
+    <td>Homework 3</td>
+    <td>February 18</td>
+    <td>February 27</td>
+  </tr>
+ <tr>
+    <td>Homework 4</td>
+    <td>March 13</td>
+    <td>March 22</td>
+  </tr>
+   <tr>
+    <td>Homework 5</td>
+    <td>April 1</td>
+    <td>April 10</td>
+  </tr>
+  <tr>
+    <td>Homework 6</td>
+    <td>April 15</td>
+    <td>April 24</td>
+  </tr>
+</table>
+</br>
+
+<h2>Class Schedule</h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Topics</th>
+    <th>Slides</th>
+    <th>Other References</th>
+  </tr>
+  <tr>
+    <td>Jan 14</td>
+    <td>Introduction</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Jan 16</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Jan 21</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Jan 23</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Jan 28</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Jan 30</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 4</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 6</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 11</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 13</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 18</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 20</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 25</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Feb 27</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 4</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 6</td>
+    <td>Midterm</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 11</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 13</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 25</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mar 27</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 1 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 3 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 8 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 10 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 15 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 17 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 22 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 24 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Apr 29 </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>May 1 </td>
+    <td> Review Class </td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</br>
+
+<h2>References</h2>
+<h3>Useful Books</h3>
+<ul>
+<li><p><a href="https://toc.cryptobook.us/">A Graduate Course in Applied Cryptography</a> by Dan Boneh and Victor Shoup</p></li>
+<li><p><a href="https://www.amazon.com/Introduction-Cryptography-Chapman-Network-Security/dp/1466570261/ref=sr_1_1">Introduction to Modern Cryptography, Second Edition </a> by Jonathan Katz and Yehuda Lindell</p></li>
+<li><p><a href="https://www.amazon.com/Foundations-Cryptography-1-Basic-Tools/dp/0521035368/ref=sr_1_1?ie=UTF8&qid=1440439391&sr=8-1&keywords=foundations+of+cryptography+basic+tools">Foundations of Cryptography: Volume 1, Basic Tools</a> by Oded Goldreich</p></li>
+<li><p><a href="https://www.amazon.com/Foundations-Cryptography-2-Basic-Applications/dp/052111991X/ref=sr_1_2?ie=UTF8&qid=1440439466&sr=8-2&keywords=foundations+of+cryptography">Foundations of Cryptography: Volume 2, Basic Applications</a> by Oded Goldreich</p></li>
+<li><p><a href="https://joyofcryptography.com/">The Joy of Cryptography</a> by Mike Rosulek</p></li>
+</ul>
+
+<h3>Useful Lecture Notes</h3>
+<ul>
+<li><p><a href="https://www.cs.cornell.edu/courses/cs4830/2010fa/lecnotes.pdf">A Course in Cryptography</a> by Rafael Pass and Abhi Shelat</p></li>
+<li><p><a href="https://www.cs.umd.edu/~jkatz/crypto/f13/lectures.html">Introduction to Cryptography</a> by Jonathan Katz</p></li>
+<li><p><a href="https://cseweb.ucsd.edu/~mihir/papers/gb.pdf">Lecture Notes on Cryptography</a> by Shafi Goldwasser and Mihir Bellare</p></li>
+<li><p><a href="https://web.cs.ucdavis.edu/~rogaway/classes/227/spring05/book/main.pdf">Introduction to Modern Cryptography</a> by Mihir Bellare and Phillip Rogaway</p></li>
+</ul>
+
+</br></br>
+
+
+</div>
+
+</body>
+</html>
