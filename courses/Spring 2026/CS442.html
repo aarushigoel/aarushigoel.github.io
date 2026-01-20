@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CS 442 (Spring 2026)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
+<SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT>
+<style>
+a:link {
+  color: #4a4b4c; 
+  background-color: transparent; 
+text-decoration: none;
+border-bottom: 1px dotted;
+
+}
+
+a:visited {
+  color: #4a4b4c;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2c4f87;
+  background-color: transparent;
+  
+}
+p {
+  font-family: "Trebuchet MS";
+  
+}
+p.title {
+  font-family: "Trebuchet MS";
+  color: #c13c6f;
+  
+}
+h2 {
+color: #2c4f87;
+  font-family: "Trebuchet MS";
+  
+}
+
+h1 {
+color: #2c4f87;
+  font-family: "Trebuchet MS";
+  
+}
+@media screen and (min-width: 601px) {
+  h1 {
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 19px;
+  }
+ p {
+    font-size: 17px;
+  }
+   center{
+    font-size: 17px;
+  }
+ .column1 {
+    float: left;
+    width: 50%;
+    padding-left: 15%;
+}
+
+.column2 {
+    float: right;
+    width: 50%;
+    padding-right: 15%;
+   
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+table {
+  font-family: "Trebuchet MS";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 17px;
+ 
+}
+ th{ color: #4E8508;}
+tr:nth-child(even) {
+  background-color: #cbe6f0;
+}
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 10px;
+  }
+  center {
+    font-size: 10px;
+  }
+   .column1 {
+    float: left;
+    width: 50%;
+    padding-left: -5%;
+}
+
+.column2 {
+    float: right;
+    width: 50%;
+    padding-right: 2%;
+   
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+table {
+  font-family: "Trebuchet MS";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 10px;
+ 
+}
+ th{ color: #4E8508;}
+tr:nth-child(even) {
+  background-color: #cbe6f0;
+  font-size: 10px;
+}
+}
+
+h3 {
+color: #4E8508;
+  font-family: "Trebuchet MS";
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+
+  
+}
+img {
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 5%;
+  overflow-x: hidden;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover 
+.sidenav a:hover {
+  background-color: #ddd;
+  color: white;
+}*/
+
+/* Style the content */
+.content {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-left: 5%;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="content">
+<center><h1>CS 442 - Introduction to Cryptography <span style="color:#4E8508">(Spring 2026)</span></h1></center>
+
+<h2>Course Overview</h2>
+<p>Cryptography has evolved from the art of writing and solving codes into the study of mathematical techniques for securing digital information, systems, and distributed computations in untrusted environments. Today, it forms the backbone of modern digital security.</p>
+ 
+<p>
+This course will introduces the fundamental principles of modern cryptography. We will begin with core cryptographic primitives such as <span style="color:#4E8508">encryption</span> and <span style="color:#4E8508">message authentication</span>, and then progress to advanced tools including <span style="color:#4E8508
+">zero-knowledge proofs</span> and <span style="color:#4E8508">secure multiparty computation</span>. We will analyze the security properties that are desirable for each of these primitives and learn how to formally define them. Finally, we will discuss constructions of these primitives and rigorously prove that they meet the defined security requirements.
+</br></br>
+By the end of the course, you will be able to use these primitives in the design of secure systems and analyze real-world cryptosystems.  </p>
+  
+
+ <h2>Basic Information</h2>
+  <ul>
+ <li> <p><span style="color:#3a9bc4">Instructor: </span> <a href="https://aarushigoel.github.io/">Aarushi Goel</a> </p></li>
+    <li><p><span style="color:#3a9bc4">Instructor Office Hours: </span> TBA (HILL 418)</p></li>
+  <li><p><span style="color:#3a9bc4">Class Time: </span> 2:00 PM - 3:20 PM, Tuesday and Thursday</p></li>
+  <li><p><span style="color:#3a9bc4">Class Location: </span> SEC 209</p></li>
+</ul>
+</br>
+<ul>
+ <li> <p><span style="color:#3a9bc4">TA: </span> Yuange Li</p></li>
+    <li><p><span style="color:#3a9bc4">TA Office Hours: </span> TBA (HILL 420)</p></li>
+  <li><p><span style="color:#3a9bc4">Email: </span> yl1407 [AT] rutgers [dot] edu</p></li>
+</ul>
+
+<h2>Pre-Requisites</h2>
+<p><span style="color:#4E8508">CS 206 </span> or an equivalent course on Discrete Mathematics is required. Familiarity with basic probability theory, computational complexity, and mathematical proof techniques is also expected.</p>
+
+<h2>Grading Policy</h2>
+<ul>
+  <li><p><span style="color:#3a9bc4">10% </span> Class Participation</p></li>
+  <li><p><span style="color:#3a9bc4">30% </span> Midterm </p></li>
+  <li><p><span style="color:#3a9bc4">40% </span> Final Exam </p></li>
+  <li><p><span style="color:#3a9bc4">20% </span> Homeworks (best 5 out of 6) </p></li>
+</ul>
+<p>All homeworks must be submitted via <span style="color:#4E8508">Gradescope</span> (on Canvas). </p>
+<p><span style="color:#3a9bc4">Late Submission:</span> Homework submitted upto 24 hours late will incur a penalty of 50%. Homework submitted more than 24 hours late will receive no credit.</p>
+<p><span style="color:#3a9bc4">Collaboration:</span> You are encouraged to collaborate with your classmates on homework problems, however, your final write-up must be your own. Be sure to explicitly acknowledge everyone with whom you collaborated. You may also refer to books or online resources listed on this website to aid in solving homework problems. However, you must properly credit all such sources in your submission, and under no circumstances should you copy material verbatim. <span style="color:#4E8508">The use of AI tools is NOT allowed.</span></p>
+<p><span style="color:#3a9bc4">Academic Dishonesty:</span> In general, any instance of academic dishonesty will result in a significant penalty to your overall course grade and will be referred to the Office of the Dean of Students for further action.</p>
+
+
+
+
+<h2>Homework Schedule</h2>
+<table>
+  <tr>
+    <th>Homework</th>
+    <th>Release (6:00 PM)</th>
+    <th>Due (11:59 PM)</th>
+  </tr>
+  <tr>
+    <td>Homework 1</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Homework 2</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Homework 3</td>
+    <td></td>
+    <td></td>
+  </tr>
+ <tr>
+    <td>Homework 4</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Homework 5</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Homework 6</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</br>
+
+<h2>Class Schedule</h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Topics</th>
+    <th>Slides</th>
+    <th>Other References</th>
+  </tr>
+   <tr>
+    <td>Jan 20</td>
+    <td>Introduction</td>
+    <td>Lecture 1</td>
+    <td></td>
+  </tr>
+  
+</table>
+</br>
+
+<h2>References</h2>
+<h3>Useful Books</h3>
+<ul>
+<li><p><a href="https://toc.cryptobook.us/">A Graduate Course in Applied Cryptography</a> by Dan Boneh and Victor Shoup</p></li>
+<li><p><a href="https://www.amazon.com/Introduction-Cryptography-Chapman-Network-Security/dp/1466570261/ref=sr_1_1">Introduction to Modern Cryptography, Second Edition </a> by Jonathan Katz and Yehuda Lindell</p></li>
+<li><p><a href="https://joyofcryptography.com/">The Joy of Cryptography</a> by Mike Rosulek</p></li>
+<li><p><a href="https://www.amazon.com/Foundations-Cryptography-1-Basic-Tools/dp/0521035368/ref=sr_1_1?ie=UTF8&qid=1440439391&sr=8-1&keywords=foundations+of+cryptography+basic+tools">Foundations of Cryptography: Volume 1, Basic Tools</a> by Oded Goldreich</p></li>
+<li><p><a href="https://www.amazon.com/Foundations-Cryptography-2-Basic-Applications/dp/052111991X/ref=sr_1_2?ie=UTF8&qid=1440439466&sr=8-2&keywords=foundations+of+cryptography">Foundations of Cryptography: Volume 2, Basic Applications</a> by Oded Goldreich</p></li>
+</ul> 
+
+<h3>Useful Lecture Notes</h3>
+<ul>
+<li><p><a href="https://www.cs.cornell.edu/courses/cs4830/2010fa/lecnotes.pdf">A Course in Cryptography</a> by Rafael Pass and Abhi Shelat</p></li>
+<li><p><a href="https://www.cs.umd.edu/~jkatz/crypto/f13/lectures.html">Introduction to Cryptography</a> by Jonathan Katz</p></li>
+<li><p><a href="https://cseweb.ucsd.edu/~mihir/papers/gb.pdf">Lecture Notes on Cryptography</a> by Shafi Goldwasser and Mihir Bellare</p></li>
+<li><p><a href="https://web.cs.ucdavis.edu/~rogaway/classes/227/spring05/book/main.pdf">Introduction to Modern Cryptography</a> by Mihir Bellare and Phillip Rogaway</p></li>
+</ul>
+
+</br></br>
+
+
+</div>
+
+</body>
+</html>
